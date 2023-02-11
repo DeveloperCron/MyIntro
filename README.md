@@ -36,5 +36,4 @@ There's a lot of ways to make an intro for your presentations. But there's lack 
 - Reworking on the modal
 - Timer has been removed completely
 - Bugs fixes, templates
-
-- Switches to Vite
+- Switched to Vite
