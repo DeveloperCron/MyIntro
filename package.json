@@ -1,0 +1,58 @@
+{
+  "name": "my-intro",
+  "version": "0.0.0",
+  "main": "dist-electron/main/index.js",
+  "description": "A tiny tool for presentations",
+  "license": "MIT",
+  "private": true,
+  "debug": {
+    "env": {
+      "VITE_DEV_SERVER_URL": "http://localhost:3000"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && electron-builder",
+    "preview": "vite preview",
+    "e2e": "npx playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.29.2",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "@vitejs/plugin-react": "^3.0.1",
+    "electron": "^22.0.3",
+    "electron-builder": "^23.6.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.0.4",
+    "vite-electron-plugin": "^0.7.4",
+    "vite-plugin-electron-renderer": "^0.11.4"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/material": "^5.11.8",
+    "@react-spring/types": "^9.6.1",
+    "@react-spring/web": "^9.6.1",
+    "@reduxjs/toolkit": "^1.9.2",
+    "@types/react-redux": "^7.1.25",
+    "babel-plugin-macros": "^3.1.0",
+    "react-redux": "^8.0.5",
+    "styled-components": "^5.3.6"
+  }
+}
