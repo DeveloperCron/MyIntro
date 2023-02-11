@@ -27,7 +27,7 @@ There's a lot of ways to make an intro for your presentations. But there's lack 
 
 ![license](https://img.shields.io/badge/LICENSE-MIT-green?style=flat-square)
 ![version](https://img.shields.io/badge/%20VERSION-%200.2-green?style=flat-square)
-[![Node.js CI](https://github.com/DeveloperCron/MyIntro/actions/workflows/CI.yml/badge.svg)](https://github.com/DeveloperCron/MyIntro/actions/workflows/CI.yml)
+[![ESLint](https://github.com/DeveloperCron/MyIntro/actions/workflows/eslint.yml/badge.svg)](https://github.com/DeveloperCron/MyIntro/actions/workflows/eslint.yml)
 
 </div>
 
