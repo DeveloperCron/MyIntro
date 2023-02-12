@@ -1,10 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 package-lock.json
-dist
-dist-electron
+**/.npmrc
+/dist-electron
 
 # dependencies
 /node_modules
+/dist/
 /.pnp
 .pnp.js
 
@@ -25,3 +26,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Generated API definitions
+electron-api.json
+electron.d.ts
