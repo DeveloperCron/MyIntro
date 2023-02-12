@@ -6,11 +6,13 @@ const Themes: Record<ThemeType, Theme> = {
     primary: color.WHITE,
     secondary: color.PURPLE,
     color: color.BLACK,
+    third: color.BRIGHTGREY,
   },
   dark: {
     primary: color.GREY,
     secondary: color.PURPLE,
     color: color.WHITE,
+    third: color.BRIGHTGREY,
   },
 };
 export { Themes };

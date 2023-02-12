@@ -6,8 +6,10 @@ import {
   ModalContainer,
   CloseButtonContainer,
   ModalHeader,
-} from './modalStyles';
-import { Stack, Backdrop, Typography } from '@mui/material';
+  BottomContainer,
+} from './ModalStyles';
+import { Stack, Backdrop, Typography, Box } from '@mui/material';
+import TextInput from '@/components/TextInput';
 import {
   faXmarkCircle,
   faLightbulb,
@@ -15,6 +17,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSpring } from '@react-spring/web';
 import { useTheme } from '@/theme/ThemeContext';
+import ModalFooter from './ModalFooter';
 
 interface CloseButtonProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void;
@@ -69,6 +72,23 @@ const CloseButton = ({ onClick, bgcolor }: CloseButtonProps) => {
   );
 };
 
+const Forum = () => {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '25ch',
+      }}
+    >
+      <Stack spacing={1} direction={'column'}>
+        <TextInput placeHolder="Subject" />
+        <TextInput placeHolder="Name" />
+      </Stack>
+    </Box>
+  );
+};
+
 const Modal: React.FC = () => {
   const dispatch = useAppDispatch();
   const content = useAppSelector(selectCount);
@@ -87,7 +107,7 @@ const Modal: React.FC = () => {
     >
       <ModalWindow bgcolor={theme.primary}>
         <ModalContainer>
-          <Stack alignItems={'center'} spacing={2}>
+          <Stack alignItems={'center'} spacing={2} direction={'column'}>
             <ModalHeader>
               <Title color={theme.color} />
               <CloseButton
@@ -95,8 +115,17 @@ const Modal: React.FC = () => {
                 bgcolor={theme.secondary}
               />
             </ModalHeader>
+            <BottomContainer
+              direction={'row'}
+              spacing={'row'}
+              alignItems={'center'}
+              justifyContent={'center'}
+            >
+              <Forum />
+            </BottomContainer>
           </Stack>
         </ModalContainer>
+        <ModalFooter />
       </ModalWindow>
     </Backdrop>
   );
