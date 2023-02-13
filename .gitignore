@@ -8,6 +8,7 @@ package-lock.json
 /dist/
 /.pnp
 .pnp.js
+electron-builder.json5
 
 # testing
 /coverage
@@ -29,3 +30,19 @@ yarn-error.log*
 # Generated API definitions
 electron-api.json
 electron.d.ts
+
+# Shared objects (inc. Windows DLLs) 
+ *.dll 
+ *.so 
+ *.so.* 
+ *.dylib 
+  
+# Executables 
+ *.exe 
+ *.out 
+ *.app 
+ *.i*86 
+ *.x86_64 
+ *.hex 
+  
+.vscode/settings.json
