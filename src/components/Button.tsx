@@ -1,57 +1,63 @@
-import React from 'react';
-import { Button as Btn } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { useTheme } from '@/theme/ThemeContext';
+import * as React from 'react';
+import ButtonUnstyled, {
+  buttonUnstyledClasses,
+} from '@mui/base/ButtonUnstyled';
+import { styled } from '@mui/system';
 
-type variant = 'text' | 'contained' | 'outlined';
+const purple = {
+  500: '#8430D5',
+  600: '#7d26d1',
+  700: '#761dcc',
+};
+
+const grey = {
+  100: '#eaeef2',
+  300: '#afb8c1',
+  900: '#24292f',
+};
+
+const CustomButton = styled(ButtonUnstyled)(
+  ({ theme }) => `
+  font-family: IBM Plex Sans, sans-serif;
+  font-weight: bold;
+  font-size: 0.875rem;
+  background-color: ${purple[500]};
+  padding: 12px 24px;
+  border-radius: 12px;
+  color: white;
+  transition: all 150ms ease;
+  cursor: pointer;
+  border: none;
+  margin-right: 20px;
+
+  &:hover {
+    background-color: ${purple[600]};
+  }
+
+  &.${buttonUnstyledClasses.active} {
+    background-color: ${purple[700]};
+  }
+
+  &.${buttonUnstyledClasses.focusVisible} {
+    box-shadow: 0 3px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 5px rgba(0, 127, 255, 0.5);
+    outline: none;
+  }
+
+  &.${buttonUnstyledClasses.disabled} {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  `
+);
 
 interface Button {
-  text: string;
-  clickHandler: () => void;
-  variant: variant;
+  onClick?: () => React.MouseEvent;
+  placeHolder: string;
 }
 
-const BootstrapButton = styled(Btn)({
-  width: 'auto',
-  height: '50%',
-  boxShadow: 'none',
-  textTransform: 'none',
-  fontSize: 14,
-  borderRadius: '10px',
-  fontFamily: [
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"',
-  ].join(','),
-  '&:hover': {
-    boxShadow: 'none',
-  },
-  '&:active': {
-    boxShadow: 'none',
-  },
-  '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-  },
-});
-
-const Button: React.FC<Button> = ({ clickHandler, text, variant }) => {
-  const { theme } = useTheme();
-
-  return (
-    <BootstrapButton
-      onClick={clickHandler}
-      variant={variant}
-      sx={{ backgroundColor: theme.secondary }}
-    >
-      {text}
-    </BootstrapButton>
-  );
+const Button: React.FC<Button> = ({ onClick, placeHolder }) => {
+  placeHolder = placeHolder || 'Submit';
+  return <CustomButton>{placeHolder}</CustomButton>;
 };
+
 export default Button;

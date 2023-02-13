@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { animated } from '@react-spring/web';
+import { Stack } from '@mui/material';
 
 export const ModalWindow = styled.div<{ bgcolor: string }>`
   width: 600px;
@@ -39,4 +40,9 @@ export const CloseButtonContainer = styled(animated.div)<{
   align-items: center;
   display: flex;
   cursor: pointer;
+`;
+
+export const BottomContainer = styled(Stack)`
+  width: 100%;
+  height: 100%;
 `;

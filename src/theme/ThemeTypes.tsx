@@ -5,4 +5,5 @@ export interface Theme {
   secondary: color;
   primary: color;
   color: color;
+  third: color;
 }
