@@ -10,6 +10,7 @@ import {
 } from './ModalStyles';
 import { Stack, Backdrop, Typography, Box } from '@mui/material';
 import TextInput from '@/components/TextInput';
+import UploadPicture from '@/components/UploadPicture';
 import {
   faXmarkCircle,
   faLightbulb,
@@ -115,12 +116,8 @@ const Modal: React.FC = () => {
                 bgcolor={theme.secondary}
               />
             </ModalHeader>
-            <BottomContainer
-              direction={'row'}
-              spacing={'row'}
-              alignItems={'center'}
-              justifyContent={'center'}
-            >
+            <BottomContainer direction={'row'} spacing={2}>
+              <UploadPicture />
               <Forum />
             </BottomContainer>
           </Stack>

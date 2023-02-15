@@ -1,20 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import FloatingButton from '@/components/FloatingButton';
+import { useTheme } from '@/theme/ThemeContext';
 
-const Container = styled.div`
-  height: auto;
-  width: auto;
-  justify-content: space-between;
-  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
-  border-radius: 50px;
+const Container = styled.div<{ bgColor: string }>`
+  height: 10%;
+  width: 100%;
+  background-color: ${(props) => props.bgColor};
   align-items: center;
-  margin: 20px;
+  justify-content: center;
+  display: flex;
 `;
 
 const Footer: React.FC = () => {
+  const { theme } = useTheme();
+
   return (
-    <Container>
+    <Container bgColor={theme.primary}>
       <FloatingButton />
     </Container>
   );

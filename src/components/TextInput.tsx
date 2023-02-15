@@ -1,6 +1,7 @@
-import * as React from 'react';
-import InputUnstyled from '@mui/base/InputUnstyled';
-import { styled } from '@mui/system';
+import React from 'react';
+import styled from 'styled-components';
+import { Typography } from '@mui/material';
+import { useTheme } from '@/theme/ThemeContext';
 
 const blue = {
   100: '#DAECFF',
@@ -23,21 +24,18 @@ const grey = {
   900: '#24292f',
 };
 
-const StyledInputElement = styled('input')(
-  ({ theme }) => `
-  width: 100%;
-  font-family: IBM Plex Sans, sans-serif;
+// Based on MUI Base TextInput
+const StyledInputContainer = styled.input<{ themeType: string }>`
+  width: 250px;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
   padding: 12px;
   border-radius: 12px;
-  color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-  background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-  border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-  box-shadow: 0px 4px 30px ${
-    theme.palette.mode === 'dark' ? grey[900] : grey[200]
-  };
+  color: ${(props) => (props.themeType === 'dark' ? grey[300] : grey[900])};
+  background: ${(props) => (props.themeType === 'dark' ? grey[900] : '#fff')};
+  border: 1px solid
+    ${(props) => (props.themeType === 'dark' ? grey[700] : grey[200])};
 
   &:hover {
     border-color: ${blue[400]};
@@ -45,37 +43,27 @@ const StyledInputElement = styled('input')(
 
   &:focus {
     border-color: ${blue[400]};
-    outline: 3px solid ${theme.palette.mode === 'dark' ? blue[500] : blue[200]};
+    outline: 1px solid
+      ${(props) => (props.themeType === 'dark' ? blue[500] : blue[200])};
   }
-`
-);
+`;
 
-const CustomInput = React.forwardRef(function CustomInput(
-  props: React.InputHTMLAttributes<HTMLInputElement>,
-  ref: React.ForwardedRef<HTMLDivElement>
-) {
-  return (
-    <InputUnstyled slots={{ input: StyledInputElement }} {...props} ref={ref} />
-  );
-});
-
-interface TextInput {
+interface TextInputProps {
+  onChangeHandler?: () => React.ChangeEvent;
   placeHolder: string;
-  text?: string;
-  onChange?: () => void;
+  value?: string;
 }
 
-const TextInput: React.FC<TextInput> = ({ placeHolder, text, onChange }) => {
+const TextInput: React.FC<TextInputProps> = ({
+  onChangeHandler,
+  placeHolder,
+  value,
+}) => {
+  const { themeType } = useTheme();
+
   return (
-    <CustomInput
-      aria-label="Demo input"
-      placeholder={placeHolder}
-    ></CustomInput>
+    <StyledInputContainer placeholder={placeHolder} themeType={themeType} />
   );
 };
 
 export default TextInput;
-
-// export default function UnstyledInputIntroduction() {
-//   return <CustomInput aria-label="Demo input" placeholder="Type something…" />;
-// }
