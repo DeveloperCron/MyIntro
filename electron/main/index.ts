@@ -1,4 +1,4 @@
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+import { app, BrowserWindow, shell, ipcMain, nativeImage } from 'electron';
 import { release } from 'node:os';
 import { join } from 'node:path';
 
@@ -44,7 +44,7 @@ async function createWindow() {
   win = new BrowserWindow({
     minWidth: 1000,
     minHeight: 600,
-    title: 'Main window',
+    title: 'MyIntro',
     icon: join(process.env.PUBLIC, 'favicon.ico'),
     webPreferences: {
       preload,
@@ -55,6 +55,11 @@ async function createWindow() {
       contextIsolation: false,
     },
   });
+
+  const appImage = nativeImage.createFromPath(
+    join(process.env.PUBLIC, 'icon.icns')
+  );
+  app.dock.setIcon(appImage);
 
   if (process.env.VITE_DEV_SERVER_URL) {
     // electron-vite-vue#298

@@ -16,18 +16,16 @@ const Container = styled.div<{ bgColor: string }>`
   display: flex;
 `;
 
-interface ModalFooter {
-  name?: string;
-  title?: string;
-  imageRender?: string;
+interface ModalFooterProps {
+  onClickHandler: (event: React.MouseEvent) => void;
 }
 
-const ModalFooter: React.FC<ModalFooter> = ({ name, title, imageRender }) => {
+const ModalFooter: React.FC<ModalFooterProps> = ({ onClickHandler }) => {
   const { theme } = useTheme();
   return (
     <Container bgColor={theme.third}>
       <ThemeMenu />
-      <Button placeHolder="Save" />
+      <Button placeHolder="Save" onClick={onClickHandler} />
     </Container>
   );
 };

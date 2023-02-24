@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import { Typography } from '@mui/material';
 import { useTheme } from '@/theme/ThemeContext';
@@ -49,7 +49,7 @@ const StyledInputContainer = styled.input<{ themeType: string }>`
 `;
 
 interface TextInputProps {
-  onChangeHandler?: () => React.ChangeEvent;
+  onChangeHandler: Dispatch<SetStateAction<string | number>>;
   placeHolder: string;
   value?: string;
 }
@@ -62,7 +62,11 @@ const TextInput: React.FC<TextInputProps> = ({
   const { themeType } = useTheme();
 
   return (
-    <StyledInputContainer placeholder={placeHolder} themeType={themeType} />
+    <StyledInputContainer
+      placeholder={placeHolder}
+      themeType={themeType}
+      onChange={(value) => onChangeHandler(value.target?.value)}
+    />
   );
 };
 
