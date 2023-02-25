@@ -1,6 +1,15 @@
+const {
+  utils: { fromBuildIdentifier },
+} = require('@electron-forge/core');
+
 module.exports = {
+  buildIdentifier: process.env.IS_BETA ? 'beta' : 'prod',
   packagerConfig: {
     icon: '/public/icon.png', // no file extension required
+    appBundleId: fromBuildIdentifier({
+      beta: 'com.beta.myintro',
+      prod: 'com.myintro.app',
+    }),
   },
   rebuildConfig: {},
   publishers: [
