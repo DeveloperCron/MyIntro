@@ -15,9 +15,9 @@ interface content {
 }
 
 const initialState: contentReducer = {
-  title: 'Debug Test',
-  description: '',
-  showModal: false,
+  title: 'Change',
+  description: 'Change',
+  showModal: true,
   imageRender: '',
 };
 
