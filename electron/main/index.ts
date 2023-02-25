@@ -59,6 +59,8 @@ async function createWindow() {
   const appImage = nativeImage.createFromPath(
     join(process.env.PUBLIC, 'icon.icns')
   );
+
+  if (require('electron-squirrel-startup')) app.quit();
   app.dock.setIcon(appImage);
 
   if (process.env.VITE_DEV_SERVER_URL) {
