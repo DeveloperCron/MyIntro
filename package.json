@@ -16,7 +16,8 @@
     "lint": "eslint .",
     "start": "vite && electron-forge start",
     "package": "tsc && vite build && electron-forge package",
-    "make": "electron-forge make"
+    "make": "vite build && electron-forge make",
+    "publish": "electron-forge publish"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
@@ -24,6 +25,7 @@
     "@electron-forge/maker-rpm": "^6.0.5",
     "@electron-forge/maker-squirrel": "^6.0.5",
     "@electron-forge/maker-zip": "^6.0.5",
+    "@electron-forge/publisher-github": "^6.0.5",
     "@playwright/test": "^1.29.2",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
