@@ -13,7 +13,7 @@ const ImageContainer = styled.img`
   height: 300px;
   border-radius: 50%;
 `;
-const Image: React.FC<{ imageRender: string }> = ({ imageRender }) => {
+const Image: React.FC<{ imageRender: string | null }> = ({ imageRender }) => {
   return (
     <Container>
       {imageRender ? (

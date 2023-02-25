@@ -25,9 +25,9 @@ const Home: React.FC = () => {
         <Image imageRender={homeContent.imageRender} />
         <ContentTextBox>
           <Typography variant="h4" fontStyle={'bold'}>
-            Hello World
+            {homeContent.title}
           </Typography>
-          <Typography variant="h6">Lior Shaposhnikov</Typography>
+          <Typography variant="h6">{homeContent.description}</Typography>
         </ContentTextBox>
       </Content>
       {showModal && createPortal(<Modal />, document.body)}

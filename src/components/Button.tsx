@@ -50,14 +50,22 @@ const CustomButton = styled(ButtonUnstyled)(
   `
 );
 
-interface Button {
-  onClick?: () => React.MouseEvent;
+interface ButtonProps {
+  onClick?: (event: React.MouseEvent) => void;
   placeHolder: string;
 }
 
-const Button: React.FC<Button> = ({ onClick, placeHolder }) => {
+/**
+
+A Button component that displays a custom button with text and an optional onClick function.
+@param {function} onClick - A function to be called when the button is clicked.
+@param {string} placeHolder - The text to be displayed inside the button.
+@returns {JSX.Element} - A React component representing the Button.
+*/
+
+const Button: React.FC<ButtonProps> = ({ onClick, placeHolder }) => {
   placeHolder = placeHolder || 'Submit';
-  return <CustomButton>{placeHolder}</CustomButton>;
+  return <CustomButton onClick={onClick}>{placeHolder}</CustomButton>;
 };
 
 export default Button;

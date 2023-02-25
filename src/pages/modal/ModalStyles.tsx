@@ -45,4 +45,6 @@ export const CloseButtonContainer = styled(animated.div)<{
 export const BottomContainer = styled(Stack)`
   width: 100%;
   height: 100%;
+  justify-content: center;
+  align-items: center;
 `;

@@ -7,7 +7,7 @@
 </div> -->
 
 <div align="center">
-   <h1>MyIntro</h1>
+   <h1><b>MyIntro</b></h1>
    <p>
         My intro is an intro tool powered by React and electron, available on Windows, Linux and MacOS
     </p>
@@ -21,7 +21,7 @@
 
 ## Motivation
 
-There's a lot of ways to make an intro for your presentations. But there's lack of the tools to make a simple intro for your presentation. This tool is inspired by Webex
+While there are many ways to create an intro for your presentations, it can be challenging to find simple and effective tools to do so. That's where our new tool comes in, inspired by the popular video conferencing platform Webex. With our tool, you can easily create a sleek and professional intro screen that will capture your audience's attention from the very beginning of your presentation. Say goodbye to the hassle of designing your own intro screen and hello to a seamless and polished presentation experience.
 
 <div align="center">
 
@@ -31,10 +31,8 @@ There's a lot of ways to make an intro for your presentations. But there's lack 
 
 </div>
 
-## Update Log
+### Contributing
 
-- Added floating button
-- Reworking on the modal
-- Timer has been removed completely
-- Bugs fixes, templates
-- Switched to Vite
+---
+
+You can review [contribution](/CONTRIBUTING.md), I hope it will help you!
