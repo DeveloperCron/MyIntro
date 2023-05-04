@@ -4,7 +4,7 @@ We take security seriously at MyIntro. We appreciate any efforts to improve the 
 
 ## Reporting a Vulnerability
 
-If you believe you have discovered a security vulnerability in our project, please report it to us as soon as possible. You can report security vulnerabilities by contacting DeveloperCron though discord/twitter.
+If you believe you have discovered a security vulnerability in our project, please report it to us as soon as possible. You can report security vulnerabilities by contacting DeveloperCron through discord/twitter.
 
 Please include the following information in your report:
 
