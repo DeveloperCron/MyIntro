@@ -15,8 +15,6 @@
 
 ![logo](./images/Header.png)
 
-## NOT FINISHED YET
-
 ---
 
 ## Motivation
